@@ -74,9 +74,11 @@ public class Ethan_Lourens_BE_Coding_Test {
             String key = (String) mapElement.getKey();
             Integer value = (Integer) mapElement.getValue();
             if (prevVal == value) {
-                System.out.println((count - 1) + ". " + key + ", " + value + " pts");
+                System.out.println((count - 1) + ". " + key.trim() + ", " + value + " pts");
+                prevVal = value;
             } else {
-                System.out.println(count + ". " + key + ", " + value + " pts");
+                System.out.println(count + ". " + key.trim() + ", " + value + " pts");
+                prevVal = value;
             }
         }
     }
@@ -89,7 +91,6 @@ public class Ethan_Lourens_BE_Coding_Test {
             String teamA = splitTeam[0];
             String teamB = splitTeam[1];
             calculateWin(teamA, teamB);
-            System.out.println(teamValues);
         }
         rearangeHashmap();
         printOutput();
