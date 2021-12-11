@@ -1,3 +1,5 @@
+/*Ethan Lourens*/
+
 import java.util.*;
 import java.util.Scanner;
 
