@@ -67,9 +67,9 @@ public class Ethan_Lourens_BE_Coding_Test {
     }
 
     public static void rearangeHashmap() {
-        // Stream<Map.Entry<K, V>> sorted = teamValues.entrySet().stream()
-        // .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()));
-        // System.out.print(sorted);
+        LinkedHashMap<String, Integer> reverseSortedMap = new LinkedHashMap<>();
+        teamValues.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
     }
 
     public static void printOutput() {
