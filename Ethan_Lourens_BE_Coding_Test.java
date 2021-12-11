@@ -2,6 +2,9 @@
 
 import java.util.*;
 import java.util.Scanner;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Ethan_Lourens_BE_Coding_Test {
     public static HashMap<String, Integer> teamValues = new HashMap<String, Integer>();
@@ -64,7 +67,9 @@ public class Ethan_Lourens_BE_Coding_Test {
     }
 
     public static void rearangeHashmap() {
-        sortHashMap.putAll(teamValues);
+        // Stream<Map.Entry<K, V>> sorted = teamValues.entrySet().stream()
+        // .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()));
+        // System.out.print(sorted);
     }
 
     public static void printOutput() {
@@ -92,6 +97,7 @@ public class Ethan_Lourens_BE_Coding_Test {
             String teamB = splitTeam[1];
             calculateWin(teamA, teamB);
         }
+        System.out.println(teamValues);
         rearangeHashmap();
         printOutput();
         myObj.close();
