@@ -5,10 +5,11 @@ import java.util.Scanner;
 
 public class Ethan_Lourens_BE_Coding_Test {
     public static HashMap<String, Integer> teamValues = new HashMap<String, Integer>();
+    public static TreeMap<String, Integer> sortHashMap = new TreeMap<>(Collections.reverseOrder());
     public static Integer win = 3;
     public static Integer tie = 1;
     public static Integer loss = 0;
-    public static Integer score = 0;
+    public static Integer count = 0;
     public static String inputLine;
 
     public static String removeAllDigit(String str) {
@@ -63,9 +64,21 @@ public class Ethan_Lourens_BE_Coding_Test {
     }
 
     public static void rearangeHashmap() {
-        TreeMap<String, Integer> sortHashMap = new TreeMap<>(Collections.reverseOrder());
         sortHashMap.putAll(teamValues);
-        System.out.println(sortHashMap);
+    }
+
+    public static void printOutput() {
+        Integer prevVal = -1;
+        for (Map.Entry mapElement : sortHashMap.entrySet()) {
+            count++;
+            String key = (String) mapElement.getKey();
+            Integer value = (Integer) mapElement.getValue();
+            if (prevVal == value) {
+                System.out.println(count + ". " + key + ", " + value + " pts");
+            } else {
+                System.out.println(count + ". " + key + ", " + value + " pts");
+            }
+        }
     }
 
     public void run() {
@@ -79,6 +92,7 @@ public class Ethan_Lourens_BE_Coding_Test {
             System.out.println(teamValues);
         }
         rearangeHashmap();
+        printOutput();
         myObj.close();
     }
 
