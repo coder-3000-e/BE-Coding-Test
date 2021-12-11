@@ -74,7 +74,7 @@ public class Ethan_Lourens_BE_Coding_Test {
             String key = (String) mapElement.getKey();
             Integer value = (Integer) mapElement.getValue();
             if (prevVal == value) {
-                System.out.println(count + ". " + key + ", " + value + " pts");
+                System.out.println((count - 1) + ". " + key + ", " + value + " pts");
             } else {
                 System.out.println(count + ". " + key + ", " + value + " pts");
             }
