@@ -9,6 +9,7 @@ Please follow the following Instructions:
 1. Enter valid (well-formatted) game information
 2. Use the following format (Team A pts, Team B pts)
 3. Enter one game per line
+4. Keep in mind that this program is Case sensitive
 
 Sample input:
 
