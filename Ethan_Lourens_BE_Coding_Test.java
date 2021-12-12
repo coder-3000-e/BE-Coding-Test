@@ -2,9 +2,6 @@
 
 import java.util.*;
 import java.util.Scanner;
-import java.util.Map.Entry;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Ethan_Lourens_BE_Coding_Test {
     public static HashMap<String, Integer> teamValues = new HashMap<String, Integer>();
@@ -67,9 +64,11 @@ public class Ethan_Lourens_BE_Coding_Test {
     }
 
     public static void rearangeHashmap() {
-        LinkedHashMap<String, Integer> reverseSortedMap = new LinkedHashMap<>();
-        teamValues.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
+        teamValues.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue()
+                        .reversed()
+                        .thenComparing(Map.Entry.comparingByKey()))
+                .forEach(System.out::println);
     }
 
     public static void printOutput() {
