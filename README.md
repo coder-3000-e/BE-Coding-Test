@@ -8,6 +8,7 @@ printed in alphabetical order (as in the tie for 3rd place in the sample data).
 Please follow the following Instructions:
 1. Enter valid (well-formatted) game information
 2. Use the following format (Team A pts, Team B pts)
+3. Enter one game per line
 
 Sample input:
 Lions 3, Snakes 3
