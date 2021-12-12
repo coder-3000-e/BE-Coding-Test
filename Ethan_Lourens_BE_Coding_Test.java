@@ -22,7 +22,7 @@ public class Ethan_Lourens_BE_Coding_Test {
                 out = out + team.charAt(i);
             }
         }
-        return out;
+        return out.trim();
     }
 
     public static Integer getVal(String team) {
