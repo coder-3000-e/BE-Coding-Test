@@ -11,9 +11,12 @@ Please follow the following Instructions:
 3. Enter one game per line
 
 Sample input:
--Lions 3, Snakes 3 
--Tarantulas 1, FC Awesome 0
--Lions 1, FC Awesome 1
+
+Lions 3, Snakes 3 
+
+Tarantulas 1, FC Awesome 0
+
+Lions 1, FC Awesome 1
 
 Tarantulas 3, Snakes 1
 
