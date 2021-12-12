@@ -1,11 +1,14 @@
-/*Ethan Lourens*/
+/*Ethan Lourens
+BE Coding Test*/
 
 import java.util.*;
 import java.util.Scanner;
+import java.util.Map.*;
+import java.util.stream.*;
 
 public class Ethan_Lourens_BE_Coding_Test {
     public static HashMap<String, Integer> teamValues = new HashMap<String, Integer>();
-    public static TreeMap<String, Integer> sortHashMap = new TreeMap<>(Collections.reverseOrder());
+    public static Map<String, Integer> sortHashMap;
     public static Integer win = 3;
     public static Integer tie = 1;
     public static Integer loss = 0;
@@ -19,8 +22,6 @@ public class Ethan_Lourens_BE_Coding_Test {
                 result = result + str.charAt(i);
             }
         }
-
-        // Return result
         return result;
     }
 
@@ -64,11 +65,13 @@ public class Ethan_Lourens_BE_Coding_Test {
     }
 
     public static void rearangeHashmap() {
-        teamValues.entrySet().stream()
-                .sorted(Map.Entry.<String, Integer>comparingByValue()
-                        .reversed()
+        sortHashMap = teamValues.entrySet().stream()
+                .sorted(Collections
+                        .reverseOrder(
+                                Map.Entry.<String, Integer>comparingByValue())
                         .thenComparing(Map.Entry.comparingByKey()))
-                .forEach(System.out::println);
+                .collect(Collectors.toMap(Entry::getKey, Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap::new));
     }
 
     public static void printOutput() {
@@ -88,18 +91,17 @@ public class Ethan_Lourens_BE_Coding_Test {
     }
 
     public void run() {
-        Scanner myObj = new Scanner(System.in); // Create a Scanner object
+        Scanner inputScan = new Scanner(System.in); // Create a Scanner object
         System.out.println("Please enter Games, enter 'stop' when done");
-        while (!(inputLine = myObj.nextLine()).equals("stop")) {
+        while (!(inputLine = inputScan.nextLine()).equals("stop")) {
             String[] splitTeam = inputLine.split(",");
             String teamA = splitTeam[0];
             String teamB = splitTeam[1];
             calculateWin(teamA, teamB);
         }
-        System.out.println(teamValues);
         rearangeHashmap();
         printOutput();
-        myObj.close();
+        inputScan.close();
     }
 
     public static void main(String[] args) {
