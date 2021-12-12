@@ -15,23 +15,23 @@ public class Ethan_Lourens_BE_Coding_Test {
     public static Integer count = 0;
     public static String inputLine;
 
-    public static String removeAllDigit(String str) {
-        String result = "";
-        for (int i = 0; i < str.length(); i++) {
-            if (!Character.isDigit(str.charAt(i))) {
-                result = result + str.charAt(i);
+    public static String getTeamName(String team) {
+        String out = "";
+        for (int i = 0; i < team.length(); i++) {
+            if (!Character.isDigit(team.charAt(i))) {
+                out = out + team.charAt(i);
             }
         }
-        return result;
+        return out;
     }
 
-    public static Integer getVal(String str) {
-        Integer num = Integer.parseInt(str.replaceAll("[\\D]", ""));
+    public static Integer getVal(String team) {
+        Integer num = Integer.parseInt(team.replaceAll("[\\D]", ""));
         return num;
     }
 
     public static void hashMapScan(String team, Integer teamPoint) {
-        team = removeAllDigit(team);
+        team = getTeamName(team);
         if (teamValues.containsKey(team)) {
             teamValues.replace(team, (teamValues.get(team) + teamPoint));
         } else {
@@ -76,29 +76,27 @@ public class Ethan_Lourens_BE_Coding_Test {
 
     public static void printOutput() {
         Integer prevVal = -1;
-        for (Map.Entry mapElement : sortHashMap.entrySet()) {
+        System.out.printf("\n%s\n", "Output:");
+        for (Map.Entry mapVal : sortHashMap.entrySet()) {
             count++;
-            String key = (String) mapElement.getKey();
-            Integer value = (Integer) mapElement.getValue();
-            if (prevVal == value) {
-                System.out.printf("%d. %s, %d pts\n", count - 1, key.trim(), value);
-                // System.out.println((count - 1) + ". " + key.trim() + ", " + value + " pts");
-                prevVal = value;
+            String mapkey = (String) mapVal.getKey();
+            Integer mapValue = (Integer) mapVal.getValue();
+            if (prevVal == mapValue) {
+                System.out.printf("%d. %s, %d pts\n", count - 1, mapkey.trim(), mapValue);
+                prevVal = mapValue;
             } else {
-                System.out.printf("%d. %s, %d pts\n", count, key.trim(), value);
-                // System.out.println(count + ". " + key.trim() + ", " + value + " pts");
-                prevVal = value;
+                System.out.printf("%d. %s, %d pts\n", count, mapkey.trim(), mapValue);
+                prevVal = mapValue;
             }
         }
     }
 
     public void run() {
         Scanner inputScan = new Scanner(System.in);
-        System.out.println("Welcome to my Program");
-        System.out.println("Instructions: Please enter valid (formatted) Game Information");
-        System.out.println("Instructions: For example: Lions 3, Snakes 3");
-        System.out.println("Instructions: Press Enter to move to the next line\n");
-        System.out.println("Please enter Game Information or enter 'done' when completed\n");
+        System.out.printf("%s\n %s\n %s\n %s\n\n %s\nInput:\n", "Welcome to my Program",
+                "Instructions: Please enter valid (formatted) Game Information",
+                "Instructions: For example: Lions 3, Snakes 3", "Instructions: Press Enter to move to the next line",
+                "Please enter Game Information or enter 'done' when completed");
         while (!(inputLine = inputScan.nextLine()).equals("done")) {
             String[] splitTeam = inputLine.split(",");
             String teamA = splitTeam[0];
