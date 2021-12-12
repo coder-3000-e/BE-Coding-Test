@@ -76,17 +76,19 @@ public class Ethan_Lourens_BE_Coding_Test {
 
     public static void printOutput() {
         Integer prevVal = -1;
+        Integer externalCount = 1;
         System.out.printf("\n%s\n", "Output:");
         for (Map.Entry mapVal : sortHashMap.entrySet()) {
             count++;
             String mapkey = (String) mapVal.getKey();
             Integer mapValue = (Integer) mapVal.getValue();
             if (prevVal == mapValue) {
-                System.out.printf("%d. %s, %d pts\n", count - 1, mapkey.trim(), mapValue);
+                System.out.printf("%d. %s, %d pts\n", externalCount, mapkey.trim(), mapValue);
                 prevVal = mapValue;
             } else {
                 System.out.printf("%d. %s, %d pts\n", count, mapkey.trim(), mapValue);
                 prevVal = mapValue;
+                externalCount = count;
             }
         }
     }
