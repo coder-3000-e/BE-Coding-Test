@@ -9,7 +9,7 @@ Please follow the following Instructions:
 1. Enter valid (well-formatted) game information
 2. Use the following format (Team A pts, Team B pts)
 3. Enter one game per line
-4. Press the Enter button to move to the line
+4. Press the Enter button to move to the next line
 5. Enter "done" when all all information is enter, followed by the Enter button
 6. Keep in mind that this program is Case sensitive
 
