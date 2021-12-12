@@ -24,6 +24,7 @@ Tarantulas 3, Snakes 1
 Lions 4, Grouches 0
 
 Expected output:
+
 Tarantulas, 6 pts
 
 Lions, 5 pts
