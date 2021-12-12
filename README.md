@@ -25,7 +25,11 @@ Lions 4, Grouches 0
 
 Expected output:
 Tarantulas, 6 pts
+
 Lions, 5 pts
+
 FC Awesome, 1 pt
+
 Snakes, 1 pt
+
 Grouches, 0 pts
