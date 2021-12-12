@@ -81,19 +81,25 @@ public class Ethan_Lourens_BE_Coding_Test {
             String key = (String) mapElement.getKey();
             Integer value = (Integer) mapElement.getValue();
             if (prevVal == value) {
-                System.out.println((count - 1) + ". " + key.trim() + ", " + value + " pts");
+                System.out.printf("%d. %s, %d pts\n", count - 1, key.trim(), value);
+                // System.out.println((count - 1) + ". " + key.trim() + ", " + value + " pts");
                 prevVal = value;
             } else {
-                System.out.println(count + ". " + key.trim() + ", " + value + " pts");
+                System.out.printf("%d. %s, %d pts\n", count, key.trim(), value);
+                // System.out.println(count + ". " + key.trim() + ", " + value + " pts");
                 prevVal = value;
             }
         }
     }
 
     public void run() {
-        Scanner inputScan = new Scanner(System.in); // Create a Scanner object
-        System.out.println("Please enter Games, enter 'stop' when done");
-        while (!(inputLine = inputScan.nextLine()).equals("stop")) {
+        Scanner inputScan = new Scanner(System.in);
+        System.out.println("Welcome to my Program");
+        System.out.println("Instructions: Please enter valid (formatted) Game Information");
+        System.out.println("Instructions: For example: Lions 3, Snakes 3");
+        System.out.println("Instructions: Press Enter to move to the next line\n");
+        System.out.println("Please enter Game Information or enter 'done' when completed\n");
+        while (!(inputLine = inputScan.nextLine()).equals("done")) {
             String[] splitTeam = inputLine.split(",");
             String teamA = splitTeam[0];
             String teamB = splitTeam[1];
