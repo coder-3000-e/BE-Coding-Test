@@ -1,5 +1,4 @@
-/*Ethan Lourens
-BE Coding Test*/
+/*BE Coding Test*/
 
 import java.util.*;
 import java.util.Scanner;
