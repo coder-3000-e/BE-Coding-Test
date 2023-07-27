@@ -1,4 +1,4 @@
-# Ethan_Lourens-BE-Coding-Test
+# BE-Coding-Test
 # Welcome to my program.
 The rules:
 In this league, a draw (tie) is worth 1 point and a win is worth 3 points. A loss is worth 0 points.
